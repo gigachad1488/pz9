@@ -101,5 +101,9 @@
   <ItemGroup>
     <None Include="Resources\SHaman_-_YA_Russkijj_b64f0d210.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\стали-охотниками-за-головами.mp4--online-audio-convert.com.avi" />
+    <Content Include="стали-охотниками-за-головами.mp4--online-audio-convert.com.avi" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

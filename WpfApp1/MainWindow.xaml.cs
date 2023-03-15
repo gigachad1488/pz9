@@ -29,6 +29,8 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            media.LoadedBehavior = MediaState.Manual;
+            media.Play();
             sound.PlayLooping();
             isedit = true;
             ChangeEdit();
@@ -118,6 +120,18 @@ namespace WpfApp1
             };
             inkpanel.Children.Add(text);
             text.Focus();
+        }
+
+        private void media_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            media.Stop();
+            media.Play();
+        }
+
+        private void menuitem_Click(object sender, RoutedEventArgs e)
+        {
+            MenuItem menu = sender as MenuItem;
+            
         }
     }
 }
