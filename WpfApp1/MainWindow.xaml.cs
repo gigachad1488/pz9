@@ -29,6 +29,7 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            int x;
             media.LoadedBehavior = MediaState.Manual;
             media.Play();
             sound.PlayLooping();
