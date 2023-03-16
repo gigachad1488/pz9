@@ -103,6 +103,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\стали-охотниками-за-головами.mp4--online-audio-convert.com.avi" />
+    <Resource Include="20230314193156614.jpg" />
+    <Resource Include="folderbrowndownload_93439.png" />
+    <Resource Include="LYSnjioBsoBlLrlB.gif" />
+    <Resource Include="save.gif" />
+    <Resource Include="kisspng-rich-text-format-plain-text-computer-icons-enriche-sms-icon-5b0fb8735c39e0.6636995315277569153778.jpg" />
+    <Resource Include="asd.jpg" />
     <Content Include="стали-охотниками-за-головами.mp4--online-audio-convert.com.avi" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

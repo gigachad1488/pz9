@@ -5,31 +5,104 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="539" Width="966">
+        Title="MainWindow" Height="539" Width="1183">
     <Grid Margin="0,0,0,-6">
         <Grid.Background>
             <ImageBrush ImageSource="/watermelon20.png"/>
         </Grid.Background>
-        <InkCanvas x:Name="inkpanel" HorizontalAlignment="Center" Height="360" VerticalAlignment="Top" Width="946" Margin="0,159,0,0">
-            <MediaElement x:Name="media" HorizontalAlignment="Left" Height="320" VerticalAlignment="Top" Width="564" Source="d:\users\student\Downloads\a4.avi" Margin="138,20,0,0" MediaEnded="media_MediaEnded"/>
+        <InkCanvas x:Name="inkpanel" HorizontalAlignment="Center" Height="360" VerticalAlignment="Top" Width="1163" Margin="0,159,0,0" FocusableChanged="inkpanel_FocusableChanged">
+            <MediaElement x:Name="media" HorizontalAlignment="Left" Height="330" VerticalAlignment="Top" Width="578" Source="d:\users\student\Downloads\a4.avi" Margin="345,25,0,0" MediaEnded="media_MediaEnded" RenderTransformOrigin="0.519,0.555"/>
         </InkCanvas>
-        <Button x:Name="Clearbutton" Content="очистить" HorizontalAlignment="Left" Margin="162,14,0,0" VerticalAlignment="Top" Height="49" Width="67" Click="Clearbutton_Click"/>
-        <Button x:Name="Savebutton" Content="сохранить" HorizontalAlignment="Left" Margin="249,19,0,0" VerticalAlignment="Top" Height="44" Width="83" Click="Savebutton_Click"/>
-        <Slider x:Name="Redslider" HorizontalAlignment="Left" Margin="38,73,0,0" VerticalAlignment="Top" Width="120" Background="Red" Maximum="255" ValueChanged="slider_ValueChanged"/>
-        <Slider x:Name="Greenslider" HorizontalAlignment="Left" Margin="38,96,0,0" VerticalAlignment="Top" Width="120" Background="#FF1FFF00" Maximum="255" ValueChanged="slider_ValueChanged"/>
-        <Slider x:Name="Blueslider" HorizontalAlignment="Left" Margin="38,119,0,0" VerticalAlignment="Top" Width="120" Background="#FF0027FF" Maximum="255" ValueChanged="slider_ValueChanged"/>
-        <Label x:Name="Colorlabel" Content="" HorizontalAlignment="Left" Margin="170,92,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="Editbutton" Content="выделить" HorizontalAlignment="Left" Margin="332,19,0,0" VerticalAlignment="Top" Height="70" Width="60" Click="Editbutton_Click"/>
-        <Button x:Name="Textbutton" Content="добавить текст" HorizontalAlignment="Left" Margin="397,27,0,0" VerticalAlignment="Top" Height="28" Click="Textbutton_Click"/>
-        <MenuItem x:Name="menuitem" HorizontalAlignment="Left" Header="команды" Margin="3,1,0,0" VerticalAlignment="Top" Click="menuitem_Click">
-            <MenuItem Header="очистить" Click= "Clearbutton_Click" IsCheckable="True"/>
-            <MenuItem Header="сохранить" Click= "Savebutton_Click"/>
-            <MenuItem Header="выделить" Click= "Editbutton_Click"/>
-            <MenuItem Header="добавить текст" Click= "Textbutton_Click"/>
-        </MenuItem>
-        <MenuItem HorizontalAlignment="Left" Header="MenuItem" Margin="631,65,0,0" VerticalAlignment="Top">
-            <MenuItem Header="очистить" Click= "Clearbutton_Click"/>
-        </MenuItem>
+        <Button x:Name="Clearbutton" Content="очистить" HorizontalAlignment="Left" Margin="158,5,0,0" VerticalAlignment="Top" Height="91" Width="94" Click="Clearbutton_Click" FontSize="20" FontStyle="Oblique" Foreground="Red">
+            <Button.Background>
+                <ImageBrush ImageSource="/20230314193156614.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Savebutton" Content="сохранить" HorizontalAlignment="Left" Margin="258,-4,0,0" VerticalAlignment="Top" Height="109" Width="82" Click="Savebutton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/folderbrowndownload_93439.png"/>
+            </Button.Background>
+        </Button>
+        <Slider x:Name="Redslider" HorizontalAlignment="Left" Margin="11,48,0,0" VerticalAlignment="Top" Width="120" Background="Red" Maximum="255" ValueChanged="slider_ValueChanged"/>
+        <Slider x:Name="Greenslider" HorizontalAlignment="Left" Margin="11,71,0,0" VerticalAlignment="Top" Width="120" Background="#FF1FFF00" Maximum="255" ValueChanged="slider_ValueChanged"/>
+        <Slider x:Name="Blueslider" HorizontalAlignment="Left" Margin="11,94,0,0" VerticalAlignment="Top" Width="120" Background="#FF0027FF" Maximum="255" ValueChanged="slider_ValueChanged"/>
+        <Label x:Name="Colorlabel" Content="" HorizontalAlignment="Left" Margin="143,67,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Editbutton" Content="выделить" HorizontalAlignment="Left" Margin="270,111,0,0" VerticalAlignment="Top" Height="48" Width="58" Click="Editbutton_Click" BorderBrush="#FFBD3E3E" OpacityMask="#FFD42424" Foreground="White">
+            <Button.Background>
+                <ImageBrush ImageSource="/LYSnjioBsoBlLrlB.gif"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Textbutton" Content="добавить текст" HorizontalAlignment="Left" Margin="345,20,0,0" VerticalAlignment="Top" Height="120" Click="Textbutton_Click" Width="92">
+            <Button.Background>
+                <ImageBrush ImageSource="/kisspng-rich-text-format-plain-text-computer-icons-enriche-sms-icon-5b0fb8735c39e0.6636995315277569153778.jpg"/>
+            </Button.Background>
+        </Button>
+
+
+
+        <Menu x:Name="menuitem" Margin="3,1,1122,0" VerticalAlignment="Top">
+            <Menu.Background>
+                <ImageBrush ImageSource="/asd.jpg"/>
+            </Menu.Background>
+            <MenuItem Header="команды" Height="46" Width="68">
+                <MenuItem Header="очистить" Click= "Clearbutton_Click"></MenuItem>
+                <MenuItem Header="сохранить" Click= "Savebutton_Click"></MenuItem>
+                <MenuItem Header="выделить" Click= "Editbutton_Click"></MenuItem>
+                <MenuItem Header="добавить текст" Click= "Textbutton_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <WrapPanel Margin="442,-6,558,375">
+            <WrapPanel.Background>
+                <ImageBrush ImageSource="/watermelon20.png"/>
+            </WrapPanel.Background>
+        </WrapPanel>
+        <WrapPanel Margin="630,24,474,375" Background="White">
+            <Label Content="толщина кисти                " HorizontalAlignment="Center" VerticalAlignment="Top" Width="79" FontSize="10"/>
+            <RadioButton x:Name="r1" Content="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="82" Height="30" Background="#FF7DFF00" Checked="r1_Checked"/>
+            <RadioButton x:Name="r2" Content="5" HorizontalAlignment="Left" VerticalAlignment="Center" Width="82" Height="30" Background="#FFDAFF00" Checked="r2_Checked"/>
+            <RadioButton x:Name="r3" Content="10" HorizontalAlignment="Left" VerticalAlignment="Center" Width="82" Height="30" Background="Red" Checked="r3_Checked"/>
+        </WrapPanel>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="580,83,0,0" VerticalAlignment="Top" Height="34" Background="Black" Click="Button_Click" Width="27">
+            <Button.Foreground>
+                <SolidColorBrush Color="Black" Opacity="0"/>
+            </Button.Foreground>
+        </Button>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="580,40,0,0" VerticalAlignment="Top" Height="34" Background="#FF00FFED" Click="Button_Click" Width="27">
+            <Button.Foreground>
+                <SolidColorBrush Color="Black" Opacity="0"/>
+            </Button.Foreground>
+        </Button>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="542,83,0,0" VerticalAlignment="Top" Height="34" Background="White" Click="Button_Click" Width="26">
+            <Button.Foreground>
+                <SolidColorBrush Color="Black" Opacity="0"/>
+            </Button.Foreground>
+        </Button>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="542,40,0,0" VerticalAlignment="Top" Height="34" Background="#FF5AFF00" Click="Button_Click" Width="26">
+            <Button.Foreground>
+                <SolidColorBrush Color="Black" Opacity="0"/>
+            </Button.Foreground>
+        </Button>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="503,83,0,0" VerticalAlignment="Top" Height="34" Background="#FFCE00FF" Click="Button_Click" Width="27">
+            <Button.Foreground>
+                <SolidColorBrush Color="Black" Opacity="0"/>
+            </Button.Foreground>
+        </Button>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="503,40,0,0" VerticalAlignment="Top" Height="34" Background="#FFFFD200" Click="Button_Click" Width="27">
+            <Button.Foreground>
+                <SolidColorBrush Color="#FFF1FF00" Opacity="0"/>
+            </Button.Foreground>
+        </Button>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="465,83,0,0" VerticalAlignment="Top" Height="34" Background="#FF0004FF" Click="Button_Click" Width="27">
+            <Button.Foreground>
+                <SolidColorBrush Color="Black" Opacity="0"/>
+            </Button.Foreground>
+        </Button>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="465,40,0,0" VerticalAlignment="Top" Height="34" Background="Red" Click="Button_Click" Width="27">
+            <Button.Foreground>
+                <SolidColorBrush Color="Black" Opacity="0"/>
+            </Button.Foreground>
+        </Button>
+        <ComboBox x:Name="textcombobox" HorizontalAlignment="Left" Margin="723,25,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="textcombobox_SelectionChanged"/>
     </Grid>
 
 </Window>

@@ -22,6 +22,7 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        TextBox ctext;
         SoundPlayer sound = new SoundPlayer(Properties.Resources.sham);
         RGBColor rgbcolor;
         Color color;
@@ -29,9 +30,16 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            int x;
+            for (int i = 0; i < 72; )
+            {
+                i += 9;
+                textcombobox.Items.Add(i);
+            }
+            r1.IsChecked = true;
             media.LoadedBehavior = MediaState.Manual;
+            media.Position = new TimeSpan(300000);
             media.Play();
+            
             sound.PlayLooping();
             isedit = true;
             ChangeEdit();
@@ -45,7 +53,7 @@ namespace WpfApp1
         private void Clearbutton_Click(object sender, RoutedEventArgs e)
         {
             inkpanel.Strokes.Clear();
-            inkpanel.Children.Clear();
+            inkpanel.Children.RemoveRange(1, inkpanel.Children.Count - 1);
         }
 
         private void Savebutton_Click(object sender, RoutedEventArgs e)
@@ -81,6 +89,7 @@ namespace WpfApp1
                     rgbcolor.Blue = Convert.ToByte(val);
                     break;
             }
+            
             color = Color.FromRgb((byte)rgbcolor.Red, (byte)rgbcolor.Green, (byte)rgbcolor.Blue);
             Colorlabel.Background = new SolidColorBrush(Color.FromRgb((byte)rgbcolor.Red, (byte)rgbcolor.Green, (byte)rgbcolor.Blue));
             inkpanel.DefaultDrawingAttributes.Color = color;
@@ -111,7 +120,7 @@ namespace WpfApp1
 
         private void Textbutton_Click(object sender, RoutedEventArgs e)
         {
-            TextBox text = new TextBox
+            ctext = new TextBox
             {
                 Width = 100,
                 Height = 60,
@@ -119,8 +128,8 @@ namespace WpfApp1
                 BorderBrush = new SolidColorBrush(Color.FromRgb(5, 5, 5)),
                 Margin = new Thickness(20, 20, 0, 0)
             };
-            inkpanel.Children.Add(text);
-            text.Focus();
+            inkpanel.Children.Add(ctext);
+            ctext.Focus();
         }
 
         private void media_MediaEnded(object sender, RoutedEventArgs e)
@@ -133,6 +142,42 @@ namespace WpfApp1
         {
             MenuItem menu = sender as MenuItem;
             
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button but = sender as Button;
+            string name = but.Name;
+            Brush brush = but.Background;
+            inkpanel.DefaultDrawingAttributes.Color = (brush as SolidColorBrush).Color;
+            Colorlabel.Background = brush;
+        }
+
+        private void r3_Checked(object sender, RoutedEventArgs e)
+        {
+            inkpanel.DefaultDrawingAttributes.Height = 10;
+            inkpanel.DefaultDrawingAttributes.Width = 10;
+        }
+
+        private void r2_Checked(object sender, RoutedEventArgs e)
+        {
+            inkpanel.DefaultDrawingAttributes.Height = 5;
+            inkpanel.DefaultDrawingAttributes.Width = 5;
+        }
+
+        private void r1_Checked(object sender, RoutedEventArgs e)
+        {
+            inkpanel.DefaultDrawingAttributes.Height = 1;
+            inkpanel.DefaultDrawingAttributes.Width = 1;
+        }
+
+        private void textcombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ctext.FontSize = Convert.ToInt32(textcombobox.SelectedItem);
+        }
+
+        private void inkpanel_FocusableChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {          
         }
     }
 }
